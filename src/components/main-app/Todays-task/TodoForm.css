@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap");
+
+.todoform-parent {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.todoform-parent-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 50px;
+  padding-left: 20px;
+}
+
+.main-focus {
+  font-family: "Oswald", sans-serif;
+  color: azure;
+  font-size: clamp(24px, 5vw, 35px); /*  Used clamp for responsive font size */
+  margin-bottom: 0;
+}
+
+.responsive-header {
+  font-family: "Oswald", sans-serif;
+  color: azure;
+  font-size: clamp(32px, 7vw, 50px); /*  Used clamp for responsive font size */
+  margin-top: -10px; /*  Adjusted margin-top */
+}
+
+.todoform {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: 950px;
+  /* box-sizing: border-box;  */
+  margin-bottom: 60px;
+}
+
+.task-assigner {
+  display: flex;
+  gap: 5px;
+  font-size: clamp(18px, 3vw, 25px); /*  Used clamp for responsive font size */
+  padding: 10px 0;
+  flex-shrink: 0; /*  Added flex-shrink */
+}
+
+.todo-input {
+  flex: 1; /*  Added flex */
+  outline: none;
+  background: none;
+  border: none;
+  font-size: clamp(16px, 3vw, 20px); /*  Used clamp for responsive font size */
+  font-weight: 600;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  padding: 10px 10px;
+  min-width: 0; /* Added min-width */
+}
+
+.todo-input::placeholder {
+  color: #ede4e4;
+  font-size: clamp(14px, 2.5vw, 20px); /* Used clamp for responsive font size */
+  font-weight: 600;
+  padding-left: 20px;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center; /*  Added align-items */
+  font-size: clamp(18px, 3vw, 25px); /*  Used clamp for responsive font size */
+  color: #a18aff;
+  flex-shrink: 0; /*  Added flex-shrink */
+  margin-right: 10px;
+}
+
+.clock-icon {
+  margin-right: 10px;
+}
+
+/*  Added media queries for responsiveness */
+@media (max-width: 768px) {
+  .todoform {
+    flex-wrap: wrap;
+  }
+
+  .task-assigner {
+    width: 100%;
+    justify-content: space-between;
+    order: -1;
+  }
+
+  .todo-input {
+    width: 100%;
+    order: 1;
+  }
+
+  .input-icon {
+    width: 100%;
+    justify-content: flex-end;
+    order: 2;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .todoform-parent {
+    padding: 10px;
+  }
+
+  .todoform {
+    padding: 10px;
+  }
+
+  .main-focus {
+    font-size: clamp(20px, 5vw, 24px);
+  }
+
+  .responsive-header {
+    font-size: clamp(28px, 7vw, 32px);
+  }
+}

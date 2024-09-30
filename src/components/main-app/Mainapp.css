@@ -1,0 +1,27 @@
+.main-app {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: auto; /*Allows horizontal scrolling if needed   */
+}
+
+.sidebar {
+  flex: 0 0 250px; /* Fixed width for larger screens */
+  min-width: 250px;
+}
+
+.bigger-side {
+  flex: 1; /* Take up remaining space */
+  min-width: 300px; /* Ensure minimum width for content  */
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .main-app {
+    flex-wrap: nowrap;
+  }
+
+  .sidebar {
+    flex: 0 0 200px;
+    min-width: 200px;
+  }
+}

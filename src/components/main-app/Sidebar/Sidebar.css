@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Pacifico&display=swap");
+
+.sidebar {
+  background-color: #fff;
+  padding: 40px;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+  gap: 10px;
+  border-bottom: 3px solid #a18aff;
+  padding-bottom: 30px;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  min-height: 60px;
+  width: 60px;
+}
+
+.user-name {
+  font-size: 20px;
+  color: #a18aff;
+  font-weight: 600;
+  margin: 0;
+  display: flex; /* Added to keep Okiefe and Gift on the same line */
+  gap: 5px; /* Added space between Okiefe and Gift */
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column; /* Stacks text vertically */
+}
+
+.do-it {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 0 5px 0; /* Added bottom margin for spacing */
+}
+
+.menu {
+  padding-left: 25px;
+  font-size: 18px;
+}
+
+.menu-list {
+  padding-left: 80px;
+  padding-bottom: 30px;
+}
+
+.menu-header {
+  display: flex;
+  gap: 40px;
+  padding: 20px 15px;
+  margin-top: 80px;
+}
+
+.filter-options {
+  display: flex;
+  padding-top: 30px;
+}
+
+.sidebar-nav {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 20px 25px;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.sidebar-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.menu-header:hover {
+  background-color: #e2e6eb;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.sidebar-nav:hover {
+  background-color: #e2e6eb;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.sidebar-nav:hover .sidebar-icon {
+  color: #a18aff;
+}
+
+.menu-header:hover .sidebar-icon {
+  color: #a18aff;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    padding: 10px;
+  }
+
+  .header-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-list {
+    padding-left: 0;
+  }
+
+  .profile-picture {
+    height: 40px;
+    width: 40px;
+  }
+
+  .user-name {
+    font-size: 16px;
+    justify-content: center; /* Center Okiefe and Gift on mobile */
+  }
+
+  .menu,
+  .sidebar-nav {
+    font-size: 14px;
+  }
+
+  .sidebar-icon {
+    font-size: 20px;
+  }
+}

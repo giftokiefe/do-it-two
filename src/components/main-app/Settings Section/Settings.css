@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Pacifico&display=swap");
+
+.card {
+  background-color: azure;
+  margin: 70px 100px;
+  padding: 20px;
+  border-radius: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.settings-title {
+  display: flex;
+  gap: 10px;
+  font-size: 25px;
+  color: #a18aff;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #a18aff;
+}
+
+.settings-menu {
+  margin-bottom: 20px;
+}
+
+.settings-option {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}

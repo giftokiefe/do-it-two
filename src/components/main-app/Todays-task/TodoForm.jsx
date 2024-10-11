@@ -9,21 +9,28 @@ import CustomDatePicker from "./CustomDatePicker";
 import "./TodoForm.css";
 
 const TodoForm = ({ addTodo, selectedDate, onDateChange }) => {
-  const [value, setValue] = useState(""); // State for task input value
-  const [time, setTime] = useState(null); // State for storing the selected time
-  const [openTime, setOpenTime] = useState(false); // State for controlling the time modal
-  const [openCalendar, setOpenCalendar] = useState(false); // State for Calendar Modal
+  const [value, setValue] = useState("");
+  const [time, setTime] = useState(null);
+  const [openTime, setOpenTime] = useState(false);
+  const [openCalendar, setOpenCalendar] = useState(false);
 
-  const handleOpenTime = () => setOpenTime(true); // function for opening time picker
-  const handleCloseTime = () => setOpenTime(false); // function for closing time picker
+  const handleOpenTime = () => setOpenTime(true);
+  const handleCloseTime = () => setOpenTime(false);
   const handleOpenCalendar = () => setOpenCalendar(true);
   const handleCloseCalendar = () => setOpenCalendar(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(value, time);
-    setValue("");
-    setTime(null);
+    if (value.trim()) {
+      const newTodo = {
+        task: value,
+        time: time,
+        date: selectedDate.toISOString(),
+      };
+      addTodo(newTodo);
+      setValue("");
+      setTime(null);
+    }
   };
 
   const handleInputChange = (event) => {
@@ -36,7 +43,6 @@ const TodoForm = ({ addTodo, selectedDate, onDateChange }) => {
     }
   };
 
-  // Function to handle time selection
   const handleTimeChange = (newTime) => {
     setTime(newTime);
   };
@@ -45,7 +51,7 @@ const TodoForm = ({ addTodo, selectedDate, onDateChange }) => {
     <div className="todoform-parent">
       <div className="todoform-parent-header">
         <h2 className="main-focus">Today's main focus</h2>
-        <h1 className="responsive-header">Design team meeting </h1>
+        <h1 className="responsive-header">Design team meeting</h1>
       </div>
 
       <form className="todoform" onSubmit={handleSubmit}>
@@ -64,9 +70,9 @@ const TodoForm = ({ addTodo, selectedDate, onDateChange }) => {
           type="text"
           className="todo-input"
           value={value}
-          placeholder="What is your next task?"
+          placeholder="What's your next task?"
           onKeyDown={handleEnterPress}
-          onChange={handleInputChange} // Update input value
+          onChange={handleInputChange}
         />
         <div className="input-icon">
           <SlClock className="clock-icon" onClick={handleOpenTime} />
@@ -74,7 +80,6 @@ const TodoForm = ({ addTodo, selectedDate, onDateChange }) => {
         </div>
       </form>
 
-      {/* Modal for displaying CustomTimePicker */}
       <Modal open={openTime} onClose={handleCloseTime}>
         <Box
           sx={{
@@ -84,7 +89,7 @@ const TodoForm = ({ addTodo, selectedDate, onDateChange }) => {
             transform: "translate(-50%, -50%)",
             width: 300,
             bgcolor: "white",
-            borderRadius: 2, // Rounded edges
+            borderRadius: 2,
             boxShadow: 24,
             p: 4,
             outline: "none",
@@ -105,7 +110,6 @@ const TodoForm = ({ addTodo, selectedDate, onDateChange }) => {
         </Box>
       </Modal>
 
-      {/* Modal for displaying DatePicker */}
       <Modal open={openCalendar} onClose={handleCloseCalendar}>
         <Box
           sx={{

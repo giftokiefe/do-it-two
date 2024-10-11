@@ -8,7 +8,7 @@
   align-items: center; /* Vertically center the content */
   background-color: #fff;
   border-radius: 20px;
-  margin-left: 120px;
+  margin-left: 13.5rem;
   margin-bottom: 30px;
 
   font-family: "Poppins", sans-serif;
@@ -17,6 +17,7 @@
 .icon-container {
   margin-left: auto; /* Push the icon container to the right */
   padding-right: 22px;
+  display: flex;
 }
 
 Todo p {
